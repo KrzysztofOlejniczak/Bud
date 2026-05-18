@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budapeszt 4–8.07.2026 — plan wyjazdu</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=zodiak@400,700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: .25rem; --space-2: .5rem; --space-3: .75rem; --space-4: 1rem; --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem;
+      --color-bg:#f7f6f2; --color-surface:#fbfbf9; --color-surface-2:#f3f0ec; --color-border:#d4d1ca; --color-text:#28251d; --color-text-muted:#6f6a61; --color-primary:#01696f; --color-primary-2:#8a5b00; --color-tag:#cedcd8; --color-good:#d4dfcc;
+      --shadow-sm:0 1px 2px rgba(26,21,16,.06); --shadow-md:0 10px 30px rgba(26,21,16,.08);
+      --radius-sm:.5rem; --radius-md:.85rem; --radius-lg:1.2rem; --radius-full:999px;
+      --font-body:'Satoshi', system-ui, sans-serif; --font-display:'Zodiak', Georgia, serif;
+      --content: 1180px;
+    }
+    [data-theme="dark"] {
+      --color-bg:#151412; --color-surface:#1d1b18; --color-surface-2:#25231f; --color-border:#3a3732; --color-text:#ece7df; --color-text-muted:#b0a89d; --color-primary:#58a6a6; --color-primary-2:#d9a441; --color-tag:#21393a; --color-good:#263424;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.25); --shadow-md:0 10px 30px rgba(0,0,0,.35);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;color:var(--color-text);background:var(--color-bg)}
+    img,svg{display:block;max-width:100%} a{color:inherit} button{font:inherit;cursor:pointer}
+    .skip{position:absolute;left:-9999px}.skip:focus{left:1rem;top:1rem;background:var(--color-surface);padding:.75rem 1rem;border-radius:var(--radius-sm);z-index:1000}
+    .topbar{position:sticky;top:0;z-index:30;background:color-mix(in srgb, var(--color-bg) 88%, transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--color-border)}
+    .topbar-inner,.hero,.section,.footer{max-width:var(--content);margin:0 auto;padding-inline:var(--space-4)}
+    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);min-height:72px}
+    .brand{display:flex;align-items:center;gap:.9rem;text-decoration:none}
+    .logo{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--color-primary),var(--color-primary-2));color:#fff;box-shadow:var(--shadow-sm)}
+    .brand strong{display:block;font-size:var(--text-sm)} .brand span{display:block;font-size:var(--text-xs);color:var(--color-text-muted)}
+    .nav{display:flex;gap:.6rem;flex-wrap:wrap}
+    .nav a,.theme{padding:.6rem .9rem;border:1px solid var(--color-border);border-radius:var(--radius-full);background:var(--color-surface);text-decoration:none;font-size:var(--text-sm)}
+    .hero{padding-block:var(--space-10) var(--space-8);display:grid;grid-template-columns:1.25fr .9fr;gap:var(--space-8)}
+    .hero-card,.card,.day,.food,.mini,.note,.price{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm)}
+    .hero-card{padding:var(--space-8)}
+    .eyebrow{font-size:var(--text-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--color-primary);font-weight:700;margin-bottom:var(--space-3)}
+    h1,h2,h3{font-family:var(--font-display);line-height:1.1}
+    h1{font-size:var(--text-2xl);margin-bottom:var(--space-4)}
+    h2{font-size:var(--text-xl);margin-bottom:var(--space-4)}
+    h3{font-size:1.35rem;margin-bottom:.45rem}
+    .lead{max-width:62ch;color:var(--color-text-muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:var(--space-5)}
+    .chip{background:var(--color-tag);padding:.45rem .8rem;border-radius:var(--radius-full);font-size:var(--text-sm)}
+    .hero-side{display:grid;gap:var(--space-4)}
+    .mini{padding:var(--space-5)}
+    .mini ul{padding-left:1.1rem}
+    .layout{display:grid;grid-template-columns:290px 1fr;gap:var(--space-6);max-width:var(--content);margin:0 auto;padding:0 var(--space-4) var(--space-16)}
+    .sidebar{position:sticky;top:92px;align-self:start;display:grid;gap:var(--space-4)}
+    .card,.day,.food,.note,.price{padding:var(--space-6)}
+    .section{padding-top:var(--space-8)}
+    .grid{display:grid;gap:var(--space-4)}
+    .days{display:grid;gap:var(--space-5)}
+    .timeline{display:grid;gap:var(--space-4);margin-top:var(--space-4)}
+    .slot{padding-left:1rem;border-left:2px solid var(--color-border)}
+    .time{font-size:var(--text-sm);font-weight:700;color:var(--color-primary)}
+    .muted{color:var(--color-text-muted)}
+    .tagrow{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0 .2rem}
+    .tag{font-size:var(--text-xs);padding:.3rem .55rem;border-radius:var(--radius-full);background:var(--color-surface-2);border:1px solid var(--color-border)}
+    .kult{background:linear-gradient(180deg, color-mix(in srgb, var(--color-primary) 8%, var(--color-surface)), var(--color-surface))}
+    .cols{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-4)}
+    .food h3{font-size:1.15rem;font-family:var(--font-body);font-weight:700}
+    .footer{padding:var(--space-10) var(--space-4) var(--space-16);color:var(--color-text-muted)}
+    .cta{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;background:var(--color-primary);color:#fff;padding:.85rem 1rem;border-radius:var(--radius-full);margin-top:var(--space-5)}
+    .small{font-size:var(--text-sm)}
+    .checklist label{display:flex;gap:.6rem;align-items:flex-start;padding:.45rem 0}
+    .price-list{display:grid;gap:.7rem}
+    .price-item{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dashed var(--color-border);padding-bottom:.55rem}
+    @media (max-width: 980px){.hero,.layout,.cols{grid-template-columns:1fr}.sidebar{position:static}.topbar-inner{align-items:flex-start;flex-direction:column;padding-block:.8rem}.nav{width:100%}.nav a,.theme{min-height:44px;display:inline-flex;align-items:center}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Przejdź do treści</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#start">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 16c5-7 11-8 16-8"/><path d="M5 18c4-3 8-4 13-4"/><circle cx="8" cy="10" r="1.2" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <div><strong>Budapeszt 4–8.07.2026</strong><span>plan „lokals + klasyki”</span></div>
+      </a>
+      <nav class="nav">
+        <a href="#plan">Plan dni</a>
+        <a href="#jedzenie">Jedzenie</a>
+        <a href="#transport">Transport</a>
+        <a href="#rezerwacje">Rezerwacje</a>
+        <a href="#zakupy">Zakupy</a>
+        <button class="theme" data-theme-toggle aria-label="Przełącz motyw">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="start">
+    <div class="hero-card">
+      <div class="eyebrow">Budapeszt szyty pod city break</div>
+      <h1>Pięć dni w mieście, które najlepiej poznaje się warstwami: kawa, kąpieliska, wzgórza, secesja i nocne światła nad Dunajem.</h1>
+      <p class="lead">Plan łączy ikony Budapesztu z miejscami, które dają rytm miasta od środka: targ, spokojniejsze ulice Újlipótváros, kawa nad specjalnością, wieczorne bulwary i kilka momentów „bez programu”, żeby Budapeszt nie był tylko listą punktów do zaliczenia.</p>
+      <div class="chips">
+        <div class="chip">Przylot: BUD T2B · 4.07 · 9:30</div>
+        <div class="chip">Hotel: Dean’s Home Budapest</div>
+        <div class="chip">Wylot: 8.07 · 19:55 · T2B</div>
+        <div class="chip">Styl: transport publiczny + budżetowo</div>
+      </div>
+      <a class="cta" href="#plan">Otwórz plan dzienny →</a>
+    </div>
+    <div class="hero-side">
+      <div class="mini">
+        <h3>Przyjazd z lotniska</h3>
+        <p class="small">Najwygodniej: autobus 100E z terminala 2 do Kálvin tér lub Deák Ferenc tér. Jedzie około 40 minut i działa całą dobę. Bilet lotniskowy kosztuje 2500 HUF i można go kupić w BudapestGO, automacie BKK albo kartą na pokładzie przez Pay&GO.</p>
+      </div>
+      <div class="mini">
+        <h3>Hotel i metro</h3>
+        <p class="small">Dean’s Home Budapest znajduje się przy Tűzoltó utca 50–56, około 2 minuty pieszo od stacji M3 Semmelweis Klinikák, więc dojazd w głąb miasta jest bardzo prosty.</p>
+      </div>
+      <div class="mini">
+        <h3>Czy kupować Budapest Card?</h3>
+        <p class="small">Na ten wyjazd raczej nie. Karta 72 h kosztuje 27 990 HUF, a 100E i tak wymaga osobnego biletu, chyba że kupisz droższą wersję 72h PLUS. Przy planie opartym głównie na spacerach i kilku przejazdach zwykłe bilety lub krótki pass BKK będą zwykle korzystniejsze.</p>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" class="layout">
+    <aside class="sidebar">
+      <div class="card">
+        <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Szybka logistyka</h3>
+        <div class="grid small" style="margin-top:1rem">
+          <div><strong>Sobota 4.07</strong><br>lotnisko → 100E → Kálvin tér → M3 do Semmelweis Klinikák → hotel</div>
+          <div><strong>Środa 8.07</strong><br>po wymeldowaniu zostaw bagaż, wróć po niego, jedź M3 do Kálvin tér i dalej 100E na lotnisko</div>
+          <div><strong>Aplikacje</strong><br>BudapestGO, Google Maps, Revolut/karta do Pay&GO</div>
+        </div>
+      </div>
+      <div class="price">
+        <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Bilety do kupienia</h3>
+        <div class="checklist small" style="margin-top:1rem">
+          <label><input type="checkbox"> 2 × bilet 100E lotnisko ↔ centrum</label>
+          <label><input type="checkbox"> Parlament — kup online wcześniej</label>
+          <label><input type="checkbox"> Széchenyi Bath — zarezerwuj online lub kup na miejscu</label>
+          <label><input type="checkbox"> Ewentualnie koncert / Sound Dome / rejs</label>
+        </div>
+      </div>
+      <div class="card small">
+        <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Adres hotelu</h3>
+        <p style="margin-top:.6rem">Dean’s Home Budapest<br>Tűzoltó u. 50–56<br>1094 Budapest</p>
+        <p class="muted" style="margin-top:.6rem">Najbliżej: M3 Semmelweis Klinikák</p>
+      </div>
+    </aside>
+
+    <div>
+      <section class="section" id="plan">
+        <h2>Plan dni</h2>
+        <div class="days">
+          <article class="day">
+            <div class="eyebrow">Sobota · 4.07</div>
+            <h3>Przylot, pierwsze zanurzenie i wieczór nad Dunajem</h3>
+            <p class="muted">To dzień „wejścia w miasto”: bez przeciążenia, ale z bardzo mocnym pierwszym kontaktem z Pestem i panoramą Budy.</p>
+            <div class="timeline">
+              <div class="slot">
+                <div class="time">09:30–11:30</div>
+                <p><strong>Przylot i transfer.</strong> Po wyjściu z T2B kieruj się na 100E. Wysiądź na Kálvin tér, przesiądź się na metro M3 do Semmelweis Klinikák i przejdź 2 minuty do hotelu. Jeśli pokój nie będzie gotowy przed 15:00, zostaw bagaż i rusz od razu do miasta.</p>
+              </div>
+              <div class="slot kult">
+                <div class="time">12:00–14:30</div>
+                <p><strong>Wielka Hala Targowa + okolice Kálvin tér.</strong> To XIX-wieczny targ, w którym dobrze czuć Budapeszt „codzienny”: papryka, langosze, sery, wina i turystyczny chaos pod piękną stalową konstrukcją. Nie chodzi tylko o zakupy — to świetne miejsce, żeby zrozumieć, jak kuchnia i handel budowały Pest.</p>
+                <div class="tagrow"><span class="tag">kultowe</span><span class="tag">lunch startowy</span><span class="tag">pamiątki</span></div>
+              </div>
+              <div class="slot">
+                <div class="time">14:30–17:30</div>
+                <p><strong>Zameldowanie i odpoczynek.</strong> Po drodze możesz zahaczyć o Corvin-negyed lub małe ulice Ferencvárosu. To dobra chwila, żeby nie gonić programu i zobaczyć mniej „pocztówkowy” Budapeszt.</p>
+              </div>
+              <div class="slot kult">
+                <div class="time">18:00–22:00</div>
+                <p><strong>Most Łańcuchowy, promenada naddunajska, buty na brzegu Dunaju, Parlament po zmroku.</strong> Most Łańcuchowy był pierwszym stałym mostem spinającym Budę i Pest, więc symbolicznie opowiada o zjednoczeniu miasta. Wieczorny spacer do Parlamentu daje jeden z tych obrazów, dla których ludzie wracają do Budapesztu: neogotycka fasada odbijająca się w wodzie wygląda jak dekoracja, ale to wciąż centrum życia politycznego Węgier.</p>
+                <div class="tagrow"><span class="tag">kultowe</span><span class="tag">najlepsze światło wieczorem</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day">
+            <div class="eyebrow">Niedziela · 5.07</div>
+            <h3>Buda klasyczna, ale prowadzona z wyczuciem</h3>
+            <p class="muted">Ten dzień składa najważniejsze panoramy i warstwy historyczne Budapesztu w jedną trasę, ale zostawia też miejsce na mniej oczywiste zaułki.</p>
+            <div class="timeline">
+              <div class="slot kult">
+                <div class="time">08:30–12:30</div>
+                <p><strong>Wzgórze Zamkowe, Baszta Rybacka, kościół Macieja.</strong> Baszta Rybacka wygląda jak romantyczna fantazja o średniowieczu, choć jest dziełem przełomu XIX i XX wieku — bardziej miejskim manifestem niż prawdziwą warownią. Kościół Macieja to z kolei miejsce koronacji i jeden z najważniejszych symboli królewskiej Budy.</p>
+                <div class="tagrow"><span class="tag">kultowe</span><span class="tag">widoki</span><span class="tag">rano najmniej tłoczno</span></div>
+              </div>
+              <div class="slot">
+                <div class="time">12:30–14:00</div>
+                <p><strong>Lunch na Budzie.</strong> Po głównych punktach zejdź w spokojniejsze uliczki wokół Táncsics Mihály utca albo Batthyány tér. Możesz po prostu poszwendać się po małych placach i patrzeć na rytm dzielnicy, nie tylko na zabytki.</p>
+              </div>
+              <div class="slot kult">
+                <div class="time">14:30–16:30</div>
+                <p><strong>Kolejka lub spacer na Gellért Hill / Cytadela — jeśli będzie w pełni dostępna.</strong> To wzgórze od lat daje jedną z najbardziej filmowych panoram miasta. Nawet jeśli fragmenty okolicy będą częściowo przebudowywane, sam kierunek spaceru i widok na łuk Dunaju nadal są warte czasu.</p>
+                <div class="tagrow"><span class="tag">kultowe</span><span class="tag">alternatywa: Várkert Bazár</span></div>
+              </div>
+              <div class="slot">
+                <div class="time">17:30–22:00</div>
+                <p><strong>Luźny wieczór w Tabán lub nad Dunajem.</strong> Zamiast „odhaczać” kolejne muzeum, usiądź na drinka albo kawę, a potem przejdź przez most pieszo. Budapeszt po zmroku działa najlepiej właśnie wtedy, gdy nie próbujesz go już kontrolować.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="day">
+            <div class="eyebrow">Poniedziałek · 6.07</div>
+            <h3>Kąpielisko, park miejski i nowocześniejsza twarz miasta</h3>
+            <p class="muted">Po dwóch dniach chodzenia dobrze wejść w temat budapeszteńskich term, a potem zestawić to z architekturą i kulturą XXI wieku.</p>
+            <div class="timeline">
+              <div class="slot kult">
+                <div class="time">08:30–12:30</div>
+                <p><strong>Széchenyi Thermal Bath.</strong> To najbardziej rozpoznawalne kąpielisko miasta: neobarokowa architektura i baseny termalne pokazują, że w Budapeszcie „iść do wód” nie jest dodatkiem, tylko częścią miejskiej tożsamości. Warto wejść rano, zanim zrobi się najgęściej.</p>
+                <div class="tagrow"><span class="tag">kultowe</span><span class="tag">rezerwacja zalecana</span><span class="tag">strój kąpielowy + klapki</span></div>
+              </div>
+              <div class="slot kult">
+                <div class="time">12:30–15:00</div>
+                <p><strong>Városliget, Zamek Vajdahunyad i House of Music Hungary.</strong> Park Miejski to miejsce, gdzie Budapeszt pokazuje, jak lubi łączyć reprezentacyjność z codziennością. House of Music Hungary jest odwrotnością ciężkiego monumentu: to współczesny budynek, który pokazuje, że miasto nie zatrzymało się na czasach Habsburgów.</p>
+                <div class="tagrow"><span class="tag">kultowe + nowe</span><span class="tag">poniedziałek uwaga na godziny</span></div>
+              </div>
+              <div class="slot">
+                <div class="time">15:00–17:00</div>
+                <p><strong>Kawa i odpoczynek.</strong> W tej części dnia nie wciskam nic „obowiązkowego”. Po termach i parku najlepiej zrobić pauzę i dać miastu wybrzmieć.</p>
+              </div>
+              <div class="slot">
+                <div class="time">18:00–22:00</div>
+                <p><strong>Jewish Quarter bez przesady.</strong> Zobacz uliczny puls dzielnicy: małe bary, przejścia, podwórka i światła. Jeśli chcesz, dorzuć ruin bar; jeśli nie, potraktuj tę dzielnicę jako spacer o zmieniającej się energii, a nie obowiązkową imprezę.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="day">
+            <div class="eyebrow">Wtorek · 7.07</div>
+            <h3>Parlament, kawiarnie belle époque i lokalniejszy Pest</h3>
+            <p class="muted">To dzień bardziej miejski niż widokowy: mniej „wow”, więcej zrozumienia, jak działa elegancki i mieszkany Budapeszt.</p>
+            <div class="timeline">
+              <div class="slot kult">
+                <div class="time">08:30–10:00</div>
+                <p><strong>Parlament — zwiedzanie wnętrz.</strong> Gmach jest symbolem węgierskiej państwowości i jednym z największych budynków parlamentarnych świata. W środku zobaczysz, że ta architektura nie miała być tylko piękna — miała manifestować rangę nowoczesnego państwa.</p>
+                <div class="tagrow"><span class="tag">kultowe</span><span class="tag">kup wcześniej online</span></div>
+              </div>
+              <div class="slot kult">
+                <div class="time">10:15–12:30</div>
+                <p><strong>Újlipótváros + Pozsonyi út.</strong> To jedna z najlepszych dzielnic na „udawanie lokalsa”: szerokie ulice, przedwojenne kamienice, małe księgarnie, śniadaniownie i spokojniejszy rytm niż w centrum. Nie jest „obowiązkowa” w przewodnikach, a właśnie dlatego tak dobrze równoważy klasyczny Budapeszt.</p>
+                <div class="tagrow"><span class="tag">ukryta perełka</span><span class="tag">spacer</span></div>
+              </div>
+              <div class="slot kult">
+                <div class="time">13:00–15:00</div>
+                <p><strong>New York Café albo bardziej rozsądna alternatywa.</strong> To jedna z najbardziej znanych kawiarni Europy Środkowej — teatralna, bogata, trochę przesadzona, czyli dokładnie taka, jaka miała być w czasach budapeszteńskiej belle époque. Warto wiedzieć, dlaczego jest słynna, ale nie trzeba na siłę siedzieć tam godzinę; równie dobrym ruchem jest krótki deser i dalszy spacer.</p>
+                <div class="tagrow"><span class="tag">kultowe</span><span class="tag">alternatywa: Centrál / Gerbeaud</span></div>
+              </div>
+              <div class="slot">
+                <div class="time">16:00–22:00</div>
+                <p><strong>Luźny wieczór według nastroju.</strong> Opcja A: rejs o zachodzie. Opcja B: Margaret Island na odpoczynek. Opcja C: powrót w ulubioną dzielnicę na kolację i ostatni długi spacer.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="day">
+            <div class="eyebrow">Środa · 8.07</div>
+            <h3>Ostatnie godziny bez pośpiechu i wylot</h3>
+            <p class="muted">Ten dzień ma być lekki: końcówka wyjazdu nie powinna zamieniać się w wyścig z walizką.</p>
+            <div class="timeline">
+              <div class="slot">
+                <div class="time">08:30–11:00</div>
+                <p><strong>Śniadanie, wymeldowanie, zostawienie bagażu.</strong> Zrób to spokojnie i nie planuj nic, co wymaga sztywnych godzin.</p>
+              </div>
+              <div class="slot">
+                <div class="time">11:00–15:30</div>
+                <p><strong>Wariant zależny od pogody.</strong> Słonecznie: Margaret Island albo bulwary przy Dunaju. Deszczowo: Muzeum, hala targowa na ostatnie zakupy albo kawiarnia z ciastkiem i porządne domknięcie planu.</p>
+              </div>
+              <div class="slot">
+                <div class="time">16:00–17:00</div>
+                <p><strong>Powrót po bagaż i wyjazd na lotnisko.</strong> Jedź M3 do Kálvin tér albo Deák Ferenc tér, potem 100E. Dobrze być na lotnisku około 17:30–18:00.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="jedzenie">
+        <h2>Jedzenie i kawa</h2>
+        <div class="cols">
+          <article class="food">
+            <h3>Obiady i kolacje</h3>
+            <div class="grid small" style="margin-top:1rem">
+              <div><strong>Menza</strong> — dobry adres na współczesne węgierskie klasyki; wege znajdzie sensowne opcje, mięsożerca gulaszowe klimaty.</div>
+              <div><strong>Mazel Tov</strong> — modniejsze miejsce w Jewish Quarter, dobre na wieczór i dzielenie się talerzami; jest sporo warzyw i mięsa.</div>
+              <div><strong>Kiosk Budapest</strong> — efektowna lokalizacja blisko centrum, dobra na bardziej „miejski” lunch lub kolację.</div>
+              <div><strong>Dobrumba</strong> — świetna opcja na warzywa, hummusy, pieczone dania i smaki lewantyńskie; bardzo bezpieczny wybór dla wegetarian.</div>
+              <div><strong>Gettó Gulyás</strong> — jeśli chcesz bardziej klasycznie i mięsnie, to dobry kontrapunkt dla bardziej nowoczesnych adresów.</div>
+            </div>
+          </article>
+          <article class="food">
+            <h3>Kawa i ciastko</h3>
+            <div class="grid small" style="margin-top:1rem">
+              <div><strong>Espresso Embassy</strong> — specjalistyczna kawa, pewniak dla ludzi, którzy naprawdę lubią espresso i filtr.</div>
+              <div><strong>Madal Café</strong> — spokojniejsza kawa specialty, dobra na poranek przed spacerem.</div>
+              <div><strong>Ruszwurm</strong> — klasyczna cukiernia na Wzgórzu Zamkowym; idzie się tam trochę po historię, trochę po kremówki.</div>
+              <div><strong>Gerbeaud</strong> — klasyka centrum, bardziej elegancka niż codzienna, ale świetna na „stary Budapeszt”.</div>
+              <div><strong>Centrál Café</strong> — dobra alternatywa dla bardziej obleganych kawiarni legendarnych.</div>
+            </div>
+          </article>
+        </div>
+        <div class="note" style="margin-top:1rem">
+          <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Jak wybierać przy stole</h3>
+          <p class="small" style="margin-top:.6rem">Dla opcji wegetariańskiej celuj w miejsca z meze, zupami, plackami ziemniaczanymi, leczo bez mięsa, daniami z serem, bakłażanem i papryką. Dla mięsożercy najmocniej wybrzmią gulasz, pörkölt, kaczka i dania z mangalicy. Dobry układ dla grupy mieszanej to jedno miejsce „wspólne” wieczorem i bardziej roślinny lunch w ciągu dnia.</p>
+        </div>
+      </section>
+
+      <section class="section" id="transport">
+        <h2>Transport</h2>
+        <div class="cols">
+          <div class="card small">
+            <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Lotnisko → hotel</h3>
+            <ol style="padding-left:1.1rem;margin-top:.7rem">
+              <li>Po wyjściu z T2B znajdź przystanek 100E.</li>
+              <li>Kup bilet 100E w BudapestGO, automacie BKK lub kartą na pokładzie.</li>
+              <li>Jedź do Kálvin tér.</li>
+              <li>Zejdź do M3 i jedź do Semmelweis Klinikák.</li>
+              <li>2 minuty pieszo do hotelu.</li>
+            </ol>
+          </div>
+          <div class="card small">
+            <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Po mieście</h3>
+            <p style="margin-top:.7rem">Waszą osią komunikacyjną będzie metro M3 z hotelu oraz tramwaje nad Dunajem. Budapeszt jest spacerowy, więc wiele dni da się zrobić modelem: metro do punktu startu, potem pieszo, a na koniec pojedynczy tramwaj lub metro powrotne.</p>
+          </div>
+        </div>
+        <div class="price" style="margin-top:1rem">
+          <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Orientacyjne koszty do zapamiętania</h3>
+          <div class="price-list small" style="margin-top:1rem">
+            <div class="price-item"><span>100E Airport Express</span><strong>2500 HUF / osoba / przejazd</strong></div>
+            <div class="price-item"><span>100E w starszych materiałach lotniskowych</span><strong>możesz trafić też na 2200 HUF — sprawdź aktualnie w BudapestGO</strong></div>
+            <div class="price-item"><span>Budapest Card 72 h</span><strong>27 990 HUF</strong></div>
+            <div class="price-item"><span>Budapest Card 72 h PLUS</span><strong>47 990 HUF</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="rezerwacje">
+        <h2>Co rezerwować</h2>
+        <div class="grid">
+          <div class="card small">
+            <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Parlament</h3>
+            <p style="margin-top:.5rem">Kup bilet wyłącznie online z wyprzedzeniem, najlepiej na wtorek rano. Oficjalny kanał sprzedaży to Jegymester wskazany przez stronę Parlamentu.</p>
+            <p style="margin-top:.5rem"><a href="https://www.parlament.hu/web/visitors/purchasing-tickets" target="_blank" rel="noopener noreferrer">Strona informacji o biletach</a></p>
+          </div>
+          <div class="card small">
+            <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Széchenyi Bath</h3>
+            <p style="margin-top:.5rem">Na miejscu wejdziesz bez rezerwacji, ale online łatwiej złapać konkretny slot i uniknąć części kolejki. W tygodniu zwykły bilet z szafką zaczyna się od 13 200 HUF.</p>
+            <p style="margin-top:.5rem"><a href="https://tickets.szechenyibath.hu" target="_blank" rel="noopener noreferrer">Oficjalne bilety online</a></p>
+          </div>
+          <div class="card small">
+            <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">House of Music Hungary</h3>
+            <p style="margin-top:.5rem">Dobra opcja jako plan B lub dodatek. Sprawdź konkretną wystawę albo pokaz w Sound Dome — to miejsce bardziej „do doświadczenia” niż tylko do obejrzenia.</p>
+          </div>
+          <div class="card small">
+            <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Rejs po Dunaju</h3>
+            <p style="margin-top:.5rem">Nie jest obowiązkowy, bo panoramy zobaczysz też pieszo, ale jako ostatni wieczór może zadziałać świetnie. Rezerwuj tylko wtedy, gdy prognoza na ten dzień wygląda stabilnie.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="zakupy">
+        <h2>Co kupić i gdzie się szwendać</h2>
+        <div class="cols">
+          <div class="card small">
+            <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Zakupy</h3>
+            <ul style="padding-left:1.1rem;margin-top:.7rem">
+              <li>Papryka i mieszanki przypraw z Wielkiej Hali Targowej.</li>
+              <li>Tokaj lub inne wino w małym wine shopie zamiast z lotniskowego sklepu.</li>
+              <li>Porządna czekolada, konfitury, rzemieślnicze mydła, drobna ceramika.</li>
+              <li>Jeśli lubisz design: księgarnie i concept stores w centrum Pesztu.</li>
+            </ul>
+          </div>
+          <div class="card small">
+            <h3 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700">Szwędanie bez spiny</h3>
+            <ul style="padding-left:1.1rem;margin-top:.7rem">
+              <li>Újlipótváros — najbardziej „mieszkalny szyk”.</li>
+              <li>Bulwary po stronie Pestu między Kálvin tér a Parlamentem.</li>
+              <li>Tabán i okolice mostów po stronie Budy.</li>
+              <li>Margaret Island — gdy chcecie odetchnąć od zabytków.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Najlepszy rytm tego wyjazdu: rano rzeczy najważniejsze, środek dnia z lunchem i kawą, wieczorem spacery bez presji. Budapeszt nagradza tych, którzy zostawiają w planie wolne miejsce.</p>
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const btn = document.querySelector('[data-theme-toggle]');
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      const paint = () => { btn.textContent = theme === 'dark' ? '☀️' : '🌙'; btn.setAttribute('aria-label', theme === 'dark' ? 'Przełącz na jasny motyw' : 'Przełącz na ciemny motyw'); };
+      paint();
+      btn.addEventListener('click', () => { theme = theme === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', theme); paint(); });
+    })();
+  </script>
+</body>
+</html>
